@@ -62,11 +62,11 @@ $ sudo systemctl restart php-fpm
 1) upload project folder and files to your system
 
 2) create and save nginx config in 
-```sudo nano /etc/nginx/sites-enabled/weeby_conf```
+```$ sudo nano /etc/nginx/sites-enabled/weeby_conf```
 (paste text from 'nginx_conf.txt', but change root to your folder root)
 
 3) create new database and import 'webbylab.sql' file 
-```mysql -u username -p 'database_name' < '/path_to_file/webbylab.sql'```
+```$ mysql -u username -p 'database_name' < '/path_to_file/webbylab.sql'```
 
 4) go to http://webby.localhost/ and try to create records and upload file 'movies.docx'
 
