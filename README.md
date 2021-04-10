@@ -65,7 +65,7 @@ $ sudo systemctl restart php-fpm
 
 ## Built With
 
-* [LEMP stack](https://www.linuxtechi.com/install-lemp-stack-on-arch-linux/ - a collection of open-source software
+* [LEMP stack](https://www.linuxtechi.com/install-lemp-stack-on-arch-linux/) - a collection of open-source software
 * [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - a framework for building responsive, mobile-first sites
 
 ## Author
