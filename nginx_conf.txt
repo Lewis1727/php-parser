@@ -1,0 +1,30 @@
+server {
+        listen 80;
+
+        root /home/lewis/Documents/my_projects/webby/public;
+         
+        index   index.html index.php;
+
+        access_log /var/log/nginx/webby.access.log;
+        error_log  /var/log/nginx/webby.error.log;
+
+        server_name webby.localhost;
+
+        location / {
+           try_files $uri $uri/ =404;
+}
+
+        location ~ \.php$ {
+            include /etc/nginx/fastcgi_params;
+            try_files $uri  =404;
+            fastcgi_pass  127.0.0.1:9000;
+            fastcgi_param SCRIPT_FILENAME
+                      $document_root$fastcgi_script_name;
+            fastcgi_intercept_errors on;
+}
+
+        #error_page 404 = @notfound;
+        #location @notfound{
+        #return 302 /;
+#}
+}

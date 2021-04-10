@@ -1,0 +1,52 @@
+<h3>ADD FILM</h3>
+<div class="row">
+
+    <div class="col-md-8">
+
+
+        <?php
+        if (isset($_REQUEST['error']) AND $_REQUEST['error'])
+            echo "<br /><q style='color:red'>Credentials are incorrect</q>";
+        ?>
+
+
+
+
+
+
+        <form action="/?action=newfilmsubmitted" class="form-horizontal"  method="post">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="year">Year:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="year" name="year" placeholder="Enter Year">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="format">Format:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="format" name="format" placeholder="Enter Format">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="actors">Actors:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="actors" name="actors" placeholder="Enter Actors">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+</div>
