@@ -63,7 +63,7 @@ $ sudo systemctl restart php-fpm
 
 2) create and save nginx config in 
 ```$ sudo nano /etc/nginx/sites-enabled/webby_conf```
-(paste text from 'nginx_conf.txt', but change root to your folder root)
+(paste text from 'nginx_conf.txt', but change root to your)
 
 3) create new database 
 ```
@@ -72,7 +72,7 @@ $ mysql -u root -p
 MariaDB> CREATE DATABASE webbylab; 
 MariaDB> exit;
 ```
-and import 'webbylab.sql' file 
+  and import 'webbylab.sql' file 
 ```
 $ mysql -u root -p webbylab < '/path_to_file/webbylab.sql' 
 ```
