@@ -3,7 +3,7 @@
 Application created for WebbyLab
 
 ## Getting Started
-This application requires you to create your own movies database. The main feature is adding movies from .docx files, by extracting as archive and parsing .xml file in php. The UI is very clear and simple. Although there are some things, that could be improved so that exceptions were handled.
+This application requires you to create your own movies database. The main features are adding movies from .docx files, by extracting as archive and parsing .xml file in php and searching films by its name or actors' name. The UI is very clear and simple. Although there are some things, that could be improved so that exceptions were handled.
 
 ### Prerequisites
 This application is simple, but to run it you need to have php local server and other requirements , so in my case I used [LEMP stack](https://www.digitalocean.com/community/tutorials/what-is-lemp):
