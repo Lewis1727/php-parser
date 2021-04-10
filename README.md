@@ -62,7 +62,7 @@ $ sudo systemctl restart php-fpm
 1) upload project folder and files to your system
 
 2) create and save nginx config in 
-```$ sudo nano /etc/nginx/sites-enabled/weeby_conf```
+```$ sudo nano /etc/nginx/sites-enabled/webby_conf```
 (paste text from 'nginx_conf.txt', but change root to your folder root)
 
 3) create new database and import 'webbylab.sql' file 
