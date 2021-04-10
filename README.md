@@ -65,8 +65,17 @@ $ sudo systemctl restart php-fpm
 ```$ sudo nano /etc/nginx/sites-enabled/webby_conf```
 (paste text from 'nginx_conf.txt', but change root to your folder root)
 
-3) create new database and import 'webbylab.sql' file 
-```$ mysql -u username -p 'database_name' < '/path_to_file/webbylab.sql'```
+3) create new database 
+```
+$ mysql -u root -p
+----------------------------------
+MariaDB> CREATE DATABASE webbylab; 
+MariaDB> exit;
+```
+and import 'webbylab.sql' file 
+```
+$ mysql -u root -p webbylab < '/path_to_file/webbylab.sql' 
+```
 
 4) go to http://webby.localhost/ and try to create records and upload file 'movies.docx'
 
