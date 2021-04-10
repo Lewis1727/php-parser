@@ -6,7 +6,7 @@ return [
         'params' => [
             'host' => 'localhost',
             'user' => 'daniel',
-            'password' => '!Monopolist1344',
+            'password' => '',
             'dbname' => 'webbylab',
         ]
     ]
