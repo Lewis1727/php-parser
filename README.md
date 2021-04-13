@@ -76,7 +76,10 @@ MariaDB> exit;
 ```
 $ mysql -u root -p webbylab < '/path_to_file/webbylab.sql' 
 ```
-  change database variables to your in 'webby/config/config.php'
+  change database data to your in 'webby/config/config.php' and in 'webby/public/upload.php' cnahge variable 
+```
+$conn = mysqli_connect("host", "user", "password", "database name");
+```
 
 4) go to http://webby.localhost/ and try to create new records or upload file 'movies.docx'
 
