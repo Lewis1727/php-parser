@@ -6,8 +6,11 @@ return [
         'params' => [
             'host' => 'localhost',
             'user' => 'daniel',
-            'password' => '',
+            'password' => '!Monopolist1344',
             'dbname' => 'webbylab',
         ]
     ]
 ];
+
+
+// $conn = mysqli_connect("localhost", "daniel", "!Monopolist1344", "webbylab");

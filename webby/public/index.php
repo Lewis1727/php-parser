@@ -35,6 +35,7 @@ switch ($routeAction) {
         break;
 
 
+
 }
 
 require '../main/Controller/MainController.php';
@@ -55,44 +56,68 @@ $controller->{$action}($_REQUEST);
 
 
 
-// $conn = mysqli_connect("localhost", "daniel", "!Monopolist1344", "webbylab");
 
-// $result = file_get_contents('http://webby.localhost/files/zip/word/document.xml');
+// TEXT PARSER //
+// $conn = mysqli_connect("", "", "", "");
 
-//     $xml = simplexml_load_string($result,null, 0, 'w', true);
-    
-//     // print_r($xml);
+// $fp = fopen('movies.txt', 'r');
 
-//     $body = $xml->body;
-//     $q=0;
-//     foreach($body[0] as $key => $value){
-//         echo "<p>";
-//         if($key == "p"){
-//             foreach ($value->r as $kkey => $vvalue) {
-//                 if (strpos((string)$vvalue->t, 'Title') !== false) {
-//                     echo (string)$vvalue->t;
-//                     $title=((string)$vvalue->t);
-//                 }
-//                 if (strpos((string)$vvalue->t, 'Release') !== false) {
-//                     echo (string)$vvalue->t;
-//                     $year=((string)$vvalue->t);
-//                 }
-//                 if (strpos((string)$vvalue->t, 'Format') !== false) {
-//                     echo (string)$vvalue->t;
-//                     $format=((string)$vvalue->t);
-//                 }
-//                 if (strpos((string)$vvalue->t, 'Stars') !== false) {
-//                     echo (string)$vvalue->t;
-//                     $actors=((string)$vvalue->t);
+// while (($line = fgets($fp, 4096)) !== false ) {
 
-//                     $query = "INSERT INTO films (`name`, `year`, `format`, `actors`) 
-//                                 VALUES ('$title', '$year', '$format', '$actors')";
-//                     $result = mysqli_query($conn, $sql);
-
-//                 }
-//             }
-//         }
-//         echo "</p>";
+//     if(strpos($line, 'Title') !== false){
+//         $title = str_replace("Title: ","",$line);
 //     }
 
+//     if(strpos($line, 'Release') !== false){
+//         $year = str_replace("Release Year: ","",$line);
+//     }
 
+//     if(strpos($line, 'Format') !== false){
+//         $format = str_replace("Format: ","",$line);
+//     }
+
+//     if(strpos($line, 'Stars') !== false){
+//         $actors = str_replace("Stars: ","",$line);
+//         $query = "INSERT INTO `films` (`name`, `year`, `format`, `actors`) VALUES ('$title', '$year', '$format', '$actors')";
+//         mysqli_query($conn, $query);
+//     }
+// }
+
+
+
+
+// DOCX  PARSER //
+
+// $conn = mysqli_connect("", "", "", "");
+// $result = file_get_contents('http://webby.localhost/files/zip/word/document.xml');
+// $xml = simplexml_load_string($result,null, 0, 'w', true);
+//         $body = $xml->body;
+//         $q=0;
+//         foreach($body[0] as $key => $value){
+//             echo "<p>";
+//             if($key == "p"){
+//                 foreach ($value->r as $kkey => $vvalue) {
+//                     if (strpos((string)$vvalue->t, 'Title') !== false) {
+//                         $title=((string)$vvalue->t);
+//                         $title = str_replace("Title: ","",$title);
+//                         echo $title;
+//                     }
+//                     if (strpos((string)$vvalue->t, 'Release') !== false) {
+//                         // echo (string)$vvalue->t;
+//                         $year=((string)$vvalue->t);
+//                         $year = str_replace("Release Year: ","",$year);
+//                     }
+//                     if (strpos((string)$vvalue->t, 'Format') !== false) {
+//                         $format=((string)$vvalue->t);
+//                         $format = str_replace("Format: ","",$format);
+//                     }
+//                     if (strpos((string)$vvalue->t, 'Stars') !== false) {
+//                         $actors=((string)$vvalue->t);
+//                         $actors = str_replace("Stars: ","",$actors);
+//                         $query = "INSERT INTO `films` (`name`, `year`, `format`, `actors`) VALUES ('$title', '$year', '$format', '$actors')";
+//                         mysqli_query($conn, $query); 
+//                     }
+//                 }
+//             }
+//             echo "</p>";
+//         }

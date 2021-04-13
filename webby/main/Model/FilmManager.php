@@ -38,23 +38,31 @@ class FilmManager
 
     public function findFilm($search)
     {
-        $films = [];
-        $query = "SELECT * FROM `films` WHERE name LIKE '%$search%' OR actors LIKE '%$search%' ORDER BY name ASC";
-        $result = $this->db->query($query);
-        if ($result) {
-            while ($row = $result->fetch_assoc()) {
-                $films[] = [
-                    'id' => $row['id'],
-                    'name' => $row['name'],
-                    'year' => $row['year'],
-                    'format' => $row['format'],
-                    'actors' => $row['actors']
-                ];
-            }
-            $result->close();
-        } else {
-            echo($this->db->error);
-        }
+        if ( is_string($search) == true){
+
+                $films = [];
+
+
+                $query = "SELECT * FROM `films` WHERE name LIKE '%$search%' OR actors LIKE '%$search%' ORDER BY name ASC";
+                $result = $this->db->query($query);
+
+                if ($result) {
+                    while ($row = $result->fetch_assoc()) {
+                        $films[] = [
+                            'id' => $row['id'],
+                            'name' => $row['name'],
+                            'year' => $row['year'],
+                            'format' => $row['format'],
+                            'actors' => $row['actors']
+                        ];
+                    }
+                    $result->close();
+                } else {
+                    echo($this->db->error);
+                }
+
+        }       
+       
         return $films;
     }
 
