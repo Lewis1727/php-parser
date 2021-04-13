@@ -3,7 +3,7 @@
 Application created for WebbyLab
 
 ## Getting Started
-This application requires you to create your own movies database. The main features are adding movies from .docx files, by extracting as archive and parsing .xml file in php and searching films by its name or actors' name. The UI is very clear and simple. Although there are some things, that could be improved so that exceptions were handled.
+This application requires you to create your own movies database. The main features are adding movies from .txt or .docx files by extracting as archive and parsing .xml file in php and searching films by its name or actors' name. The UI is very clear and simple. Although there are some things, that could be improved so that exceptions were handled.
 
 ### Prerequisites
 This application is simple, but to run it you need to have php local server and other requirements , so in my case I used [LEMP stack](https://www.digitalocean.com/community/tutorials/what-is-lemp):
@@ -81,7 +81,17 @@ $ mysql -u root -p webbylab < '/path_to_file/webbylab.sql'
 $conn = mysqli_connect("host", "user", "password", "database name");
 ```
 
-4) go to http://webby.localhost/ and try to create new records or upload file 'movies.docx'
+4) go to http://webby.localhost/ and try to create new records or upload file 'movies.txt' (by default you can upload only .txt files)
+
+## Note:
+if you want to upload .docx files, in '/webby/main/View/film/list.phtml' change 
+```
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+```
+  to
+```
+  <form action="upload_docx.php" method="post" enctype="multipart/form-data">
+```
 
 ## Built With
 
