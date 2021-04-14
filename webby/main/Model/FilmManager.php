@@ -42,9 +42,16 @@ class FilmManager
 
                 $films = [];
 
+                //unsafety query
+                // $query = "SELECT * FROM `films` WHERE name LIKE '%$search%' OR actors LIKE '%$search%' ORDER BY name ASC";
+                // $result = $this->db->query($query);
 
-                $query = "SELECT * FROM `films` WHERE name LIKE '%$search%' OR actors LIKE '%$search%' ORDER BY name ASC";
+                //safety query
+                $search = "%$search%";
+                $query = "SELECT * FROM `films` WHERE name LIKE '%s' OR actors LIKE '%s' ORDER BY name ASC";
+                $query = \sprintf($query, $this->db->real_escape_string($search), $this->db->real_escape_string($search));
                 $result = $this->db->query($query);
+
 
                 if ($result) {
                     while ($row = $result->fetch_assoc()) {
