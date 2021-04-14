@@ -34,9 +34,10 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) { 
+
         $conn = mysqli_connect("localhost", "daniel", "!Monopolist1344", "webbylab");
 
-        $fp = fopen('movies.txt', 'r');
+        $fp = fopen('files/'.basename($_FILES["fileToUpload"]["name"]), 'r');
 
         while (($line = fgets($fp, 4096)) !== false ) {
 
