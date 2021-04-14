@@ -1,0 +1,36 @@
+<h3 class="text-center">FINDED FILMS</h3>
+
+<div class="row">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Year</th>
+            <th scope="col">Format</th>
+            <th scope="col">Actors</th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $escapeHtml = 'htmlspecialchars';
+            $films = isset($variables) ? $variables : [];
+            $q=0;
+            foreach ($films as $filmArray)
+            {
+            $q++;
+            ?>
+            <tr>
+                <td><?php echo $q; ?></td>
+                <td><?php echo $escapeHtml($filmArray['name']); ?></td>
+                <td><?php echo $escapeHtml($filmArray['year']); ?></td>
+                <td><?php echo $escapeHtml($filmArray['format']); ?></td>
+                <td><?php echo $escapeHtml($filmArray['actors']); ?></td>
+                <td><a class="text-danger" href="/?action=delete&id=<?=($filmArray['id']);?>">DELETE</a></td>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
