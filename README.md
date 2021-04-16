@@ -1,6 +1,4 @@
-# WebbyLab (web application)
-
-Application created for WebbyLab
+# PHP Parser (web application)
 
 ## Getting Started
 This application requires you to create your own movies database. The main features are adding movies from .txt or .docx files by extracting as archive and parsing .xml file in php and searching films by its name or actors' name. The UI is very clear and simple. Although there are some things, that could be improved so that exceptions were handled.
